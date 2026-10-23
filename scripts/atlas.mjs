@@ -47,6 +47,14 @@ for (const [i, s] of sourcesList.entries()) {
   sources.set(s.id, s);
 }
 
+// Результат проверки адресов (scripts/check-sources.mjs), если она проводилась.
+const CHECKS_FILE = path.join(DATA, 'source-checks.yaml');
+const sourceChecks = fs.existsSync(CHECKS_FILE) ? load(CHECKS_FILE) : null;
+const checkById = new Map((sourceChecks?.checks ?? []).map((c) => [c.id, c]));
+for (const id of checkById.keys()) {
+  if (!sources.has(id)) fail('source-checks.yaml', `источник «${id}» не описан в sources.yaml — перезапустите проверку`);
+}
+
 const mapFiles = fs
   .readdirSync(path.join(DATA, 'maps'))
   .filter((f) => f.endsWith('.yaml'))
@@ -125,6 +133,30 @@ function monthYear(checked) {
   return `${MONTHS[mo - 1]} ${y} года`;
 }
 
+const CHECK_LABELS = {
+  ok: 'открывается',
+  moved: 'перенаправляет',
+  'http-error': 'ошибка',
+  unreachable: 'не ответил',
+  tls: 'ошибка сертификата',
+  'no-address': 'у домена нет адреса',
+  'dns-error': 'ошибка DNS',
+  nxdomain: 'домена нет',
+};
+
+// Что стало с адресом источника при последней проверке.
+function checkLabel(s) {
+  if (!s.url) return '—';
+  const c = checkById.get(s.id);
+  let label = '—';
+  if (c) {
+    label = CHECK_LABELS[c.result] ?? c.result;
+    if (c.result === 'moved') label += ` на ${new URL(c.moved_to).hostname}`;
+    if (c.result === 'http-error') label += ` ${c.http}`;
+  }
+  return s.url_note ? `${label}; ${s.url_note}` : label;
+}
+
 function passport(m) {
   const unique = new Set(m.questions.flatMap((q) => q.sources.map((l) => l.source))).size;
   const rows = [
@@ -171,8 +203,9 @@ function sourcesTable(m) {
   const rows = [...byId.entries()]
     .map(([id, ns]) => ({s: sources.get(id), ns}))
     .sort((a, b) => b.ns.length - a.ns.length || a.s.name.localeCompare(b.s.name, 'ru'))
-    .map(({s, ns}) => `| ${sourceLink(s)} | ${TYPE_LABELS[s.type]} | ${cell(s.owner ?? '—')} | ${ns.join(', ')} |`);
-  return ['| Источник | Тип | Владелец | Вопросы |', '|----------|-----|----------|---------|', ...rows].join('\n');
+    .map(({s, ns}) => `| ${sourceLink(s)} | ${TYPE_LABELS[s.type]} | ${cell(s.owner ?? '—')} | ${ns.join(', ')} | ${cell(checkLabel(s))} |`);
+  const checked = sourceChecks ? `Адрес (${monthYear(sourceChecks.checked).replace(/ года$/, '')})` : 'Адрес';
+  return [`| Источник | Тип | Владелец | Вопросы | ${checked} |`, '|----------|-----|----------|---------|------|', ...rows].join('\n');
 }
 
 function counts(m) {
@@ -213,11 +246,26 @@ function summary() {
     ...repeatedRows,
   ].join('\n');
 
-  return {mapTable, repeatedTable};
+  let checksTable = '';
+  if (sourceChecks) {
+    const tally = new Map();
+    for (const s of sources.values()) {
+      if (!s.url) continue;
+      const c = checkById.get(s.id);
+      const key = c ? c.result : 'unchecked';
+      tally.set(key, (tally.get(key) ?? 0) + 1);
+    }
+    const order = ['ok', 'moved', 'http-error', 'tls', 'unreachable', 'no-address', 'dns-error', 'nxdomain', 'unchecked'];
+    const rows = order
+      .filter((k) => tally.has(k))
+      .map((k) => `| ${k === 'unchecked' ? 'не проверялся' : CHECK_LABELS[k]} | ${tally.get(k)} |`);
+    checksTable = ['| Результат | Источников |', '|-----------|-----------:|', ...rows].join('\n');
+  }
+  return {mapTable, repeatedTable, checksTable};
 }
 
 function csv(m) {
-  const header = ['map', 'question_n', 'question', 'source_id', 'source_name', 'source_type', 'url', 'owner', 'availability_2019'];
+  const header = ['map', 'question_n', 'question', 'source_id', 'source_name', 'source_type', 'url', 'owner', 'availability_2019', 'url_check'];
   const quote = (v) => {
     const s = v === undefined || v === null ? '' : String(v);
     return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
@@ -227,7 +275,7 @@ function csv(m) {
     for (const link of q.sources) {
       const s = sources.get(link.source);
       lines.push(
-        [m.id, q.n, q.text, s.id, s.name, s.type, s.url, s.owner, link.availability].map(quote).join(','),
+        [m.id, q.n, q.text, s.id, s.name, s.type, s.url, s.owner, link.availability, checkById.get(s.id)?.result].map(quote).join(','),
       );
     }
   }
@@ -247,8 +295,9 @@ for (const m of maps) {
   fs.writeFileSync(path.join(OUT_MDX, `${m.id}-notes.mdx`), BANNER + notes(m) + '\n');
   fs.writeFileSync(path.join(OUT_CSV, `${m.id}.csv`), csv(m));
 }
-const {mapTable, repeatedTable} = summary();
+const {mapTable, repeatedTable, checksTable} = summary();
 fs.writeFileSync(path.join(OUT_MDX, 'summary-maps.mdx'), BANNER + mapTable + '\n');
 fs.writeFileSync(path.join(OUT_MDX, 'summary-repeated.mdx'), BANNER + repeatedTable + '\n');
+fs.writeFileSync(path.join(OUT_MDX, 'summary-checks.mdx'), BANNER + (checksTable || 'Адреса источников не проверялись.') + '\n');
 
 console.log(`Сгенерировано: ${path.relative(ROOT, OUT_MDX)}/, CSV в ${path.relative(ROOT, OUT_CSV)}/.`);

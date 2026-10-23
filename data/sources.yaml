@@ -396,6 +396,7 @@
   type: site
   url: https://минобрнауки.рф
   owner: Минобрнауки России
+  url_note: minobrnauki.net — не официальный сайт министерства, официальный — minobrnauki.gov.ru
 - id: edu-gov-ru
   name: edu.gov.ru
   type: site
@@ -462,6 +463,7 @@
   name: eduniko.ru
   type: site
   url: https://eduniko.ru
+  url_note: сторонний адрес, проверить вручную
 - id: eduvpr-ru
   name: eduvpr.ru
   type: site
