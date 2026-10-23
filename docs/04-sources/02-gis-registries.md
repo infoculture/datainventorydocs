@@ -17,7 +17,7 @@ description: "Реестры государственных информацио
 
 На уровне субъектов федерации, например:
 
-* Ленинградская область [https://reestr-gis.spb.ru/rgis/](https://reestr-gis.spb.ru/rgis/)
+* Санкт-Петербург [https://reestr-gis.spb.ru/rgis/](https://reestr-gis.spb.ru/rgis/)
 * Камчатский край [https://agais.kamgov.ru/reestr_gis](https://agais.kamgov.ru/reestr_gis)
 * Воронежская область [https://www.govvrn.ru/edinyj-reestr-gosudarstvennyh-informacionnyh-sistem-voronezskoj-oblastio](https://www.govvrn.ru/edinyj-reestr-gosudarstvennyh-informacionnyh-sistem-voronezskoj-oblastio)
 * Удмуртская республика [http://www.msur.ru/function/information_systems/register_state_information_systems_udm/](http://www.msur.ru/function/information_systems/register_state_information_systems_udm/)
