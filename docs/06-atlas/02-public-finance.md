@@ -1,29 +1,50 @@
 ---
-description: >-
-  Карты данных по тематике государственные финансы включая госконтракты, бюджеты
-  и тд.
+description: "Карта данных по государственным финансам — бюджеты, госконтракты, субсидии, госпрограммы, госимущество: 21 вопрос и источники ответов с отметкой доступности."
 ---
+
+import PublicFinancePassport from './_generated/public-finance-passport.mdx';
+import PublicFinanceQuestions from './_generated/public-finance-questions.mdx';
+import PublicFinanceSources from './_generated/public-finance-sources.mdx';
+import PublicFinanceNotes from './_generated/public-finance-notes.mdx';
 
 # Государственные финансы
 
-## Описание
+Карта отвечает на вопрос, где найти данные по теме «Государственные финансы». У каждого источника отмечено, доступны ли в нём сведения, — по легенде исходной карты. Таблицы на этой странице построены из файла данных карты; как их читать, объяснено в главе [«Как читать атлас»](./01-how-to-read.md).
 
-| Характеристика | Значение |
-| :--- | :--- |
-| Предметная область | Государственные финансы |
-| Последнее обновление | Декабрь 2019 г. |
-| Источники сведений | ФГИС КИ, официальные сайты органов власти, экспертный анализ |
-| Автор | Иван Бегтин (ibegtin@infoculture.ru) |
+## Паспорт
 
-## Карта данных в формате интеллект карты
+<PublicFinancePassport />
 
-![Диаграмма в формате интеллект карты Xmind](/img/atlas/public-finance-mindmap.webp)
+## Вопросы и источники
 
-## Карта данных для печати
+<span className="avail avail--available">●</span> данные доступны · <span className="avail avail--restricted">●</span> доступны с ограничениями · <span className="avail avail--unavailable">●</span> не доступны · <span className="avail avail--unknown">○</span> доступность не указана
 
-![Карта данных "Государственные финансы" подготовленная для печати](/img/atlas/public-finance-print.webp)
+<PublicFinanceQuestions />
+
+## Источники карты
+
+Владельцы указаны по домену сайта и по документам не сверены.
+
+<PublicFinanceSources />
+
+## Визуализации
+
+![Карта данных «Государственные финансы» в виде интеллект-карты (версия 2)](/img/atlas/public-finance-mindmap.webp)
+
+![Карта данных «Государственные финансы» для печати](/img/atlas/public-finance-print.webp)
 
 ## Файлы для скачивания
 
-* [Карта данных как интеллект карта](pathname:///img/atlas/public-finance-mindmap.png)
-* [Карта данных для печати](pathname:///downloads/public-finance.pdf)
+- [Интеллект-карта, PNG](pathname:///img/atlas/public-finance-mindmap.png)
+- [Карта для печати, PDF](pathname:///downloads/public-finance.pdf)
+- [Вопросы и источники, CSV](pathname:///downloads/public-finance.csv)
+- [Данные карты, YAML](https://github.com/infoculture/datainventorydocs/blob/master/data/maps/public-finance.yaml)
+
+## Что изменилось
+
+<PublicFinanceNotes />
+
+## Источники
+
+- Исходные карты: интеллект-карта и карта для печати, автор Иван Бегтин, АНО «Информационная культура».
+- Данные карты: [data/maps/public-finance.yaml](https://github.com/infoculture/datainventorydocs/blob/master/data/maps/public-finance.yaml) и общий список источников [data/sources.yaml](https://github.com/infoculture/datainventorydocs/blob/master/data/sources.yaml).

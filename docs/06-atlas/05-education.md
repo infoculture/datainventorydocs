@@ -1,27 +1,50 @@
 ---
-description: Карты данных в сфере образования и науки
+description: "Карта данных по образованию и науке — статистика, вузы, бюджеты, стандарты, ЕГЭ, диссертации: 20 вопросов и источники ответов с отметкой доступности."
 ---
+
+import EducationPassport from './_generated/education-passport.mdx';
+import EducationQuestions from './_generated/education-questions.mdx';
+import EducationSources from './_generated/education-sources.mdx';
+import EducationNotes from './_generated/education-notes.mdx';
 
 # Образование
 
-## Описание
+Карта отвечает на вопрос, где найти данные по теме «Образование». У каждого источника отмечено, доступны ли в нём сведения, — по легенде исходной карты. Таблицы на этой странице построены из файла данных карты; как их читать, объяснено в главе [«Как читать атлас»](./01-how-to-read.md).
 
-| Характеристика | Значение |
-| :--- | :--- |
-| Предметная область | Образование |
-| Последнее обновление | Декабрь 2018 г. |
-| Источники сведений | ФГИС КИ, официальные сайты органов власти, экспертный анализ |
-| Автор | Иван Бегтин (ibegtin@infoculture.ru) |
+## Паспорт
 
-## Карта данных в формате интеллект карты
+<EducationPassport />
 
-![Интеллект карта в образовании](/img/atlas/education-mindmap.webp)
+## Вопросы и источники
 
-## Карта данных для печати
+<span className="avail avail--available">●</span> данные доступны · <span className="avail avail--restricted">●</span> доступны с ограничениями · <span className="avail avail--unavailable">●</span> не доступны · <span className="avail avail--unknown">○</span> доступность не указана
 
-![Карта данных для печати](/img/atlas/education-print.webp)
+<EducationQuestions />
+
+## Источники карты
+
+Владельцы указаны по домену сайта и по документам не сверены.
+
+<EducationSources />
+
+## Визуализации
+
+![Карта данных «Образование» в виде интеллект-карты](/img/atlas/education-mindmap.webp)
+
+![Карта данных «Образование» для печати](/img/atlas/education-print.webp)
 
 ## Файлы для скачивания
 
-* [Интеллект карта данных в образовании](pathname:///img/atlas/education-mindmap.png)
-* [Карта данных для печати](pathname:///downloads/education.pdf)
+- [Интеллект-карта, PNG](pathname:///img/atlas/education-mindmap.png)
+- [Карта для печати, PDF](pathname:///downloads/education.pdf)
+- [Вопросы и источники, CSV](pathname:///downloads/education.csv)
+- [Данные карты, YAML](https://github.com/infoculture/datainventorydocs/blob/master/data/maps/education.yaml)
+
+## Что изменилось
+
+<EducationNotes />
+
+## Источники
+
+- Исходные карты: интеллект-карта и карта для печати, автор Иван Бегтин, АНО «Информационная культура».
+- Данные карты: [data/maps/education.yaml](https://github.com/infoculture/datainventorydocs/blob/master/data/maps/education.yaml) и общий список источников [data/sources.yaml](https://github.com/infoculture/datainventorydocs/blob/master/data/sources.yaml).

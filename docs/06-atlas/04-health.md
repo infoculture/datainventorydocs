@@ -1,27 +1,50 @@
 ---
-description: Карта данных по системе здравоохранения
+description: "Карта данных по здравоохранению — статистика, учреждения, лекарства, медицинские изделия, регистры: 20 вопросов и источники ответов с отметкой доступности."
 ---
+
+import HealthPassport from './_generated/health-passport.mdx';
+import HealthQuestions from './_generated/health-questions.mdx';
+import HealthSources from './_generated/health-sources.mdx';
+import HealthNotes from './_generated/health-notes.mdx';
 
 # Здравоохранение
 
-## Описание
+Карта отвечает на вопрос, где найти данные по теме «Здравоохранение». У каждого источника отмечено, доступны ли в нём сведения, — по легенде исходной карты. Таблицы на этой странице построены из файла данных карты; как их читать, объяснено в главе [«Как читать атлас»](./01-how-to-read.md).
 
-| Характеристика | Значение |
-| :--- | :--- |
-| Предметная область | Здравоохранение |
-| Последнее обновление | Декабрь 2018 г. |
-| Источники сведений | ФГИС КИ, официальные сайты органов власти, экспертный анализ |
-| Автор | Иван Бегтин (ibegtin@infoculture.ru) |
+## Паспорт
 
-## Карта данных в формате интеллект карты
+<HealthPassport />
 
-![Карта данных в здравоохранении](/img/atlas/health-mindmap.webp)
+## Вопросы и источники
 
-## Карта данных для печати
+<span className="avail avail--available">●</span> данные доступны · <span className="avail avail--restricted">●</span> доступны с ограничениями · <span className="avail avail--unavailable">●</span> не доступны · <span className="avail avail--unknown">○</span> доступность не указана
 
-![Карта данных для печати](/img/atlas/health-print.webp)
+<HealthQuestions />
+
+## Источники карты
+
+Владельцы указаны по домену сайта и по документам не сверены.
+
+<HealthSources />
+
+## Визуализации
+
+![Карта данных «Здравоохранение» в виде интеллект-карты](/img/atlas/health-mindmap.webp)
+
+![Карта данных «Здравоохранение» для печати](/img/atlas/health-print.webp)
 
 ## Файлы для скачивания
 
-* [Интеллект карта данных в здравоохранении](pathname:///img/atlas/health-mindmap.png)
-* [Карта данных для печати](pathname:///downloads/health.pdf)
+- [Интеллект-карта, PNG](pathname:///img/atlas/health-mindmap.png)
+- [Карта для печати, PDF](pathname:///downloads/health.pdf)
+- [Вопросы и источники, CSV](pathname:///downloads/health.csv)
+- [Данные карты, YAML](https://github.com/infoculture/datainventorydocs/blob/master/data/maps/health.yaml)
+
+## Что изменилось
+
+<HealthNotes />
+
+## Источники
+
+- Исходные карты: интеллект-карта и карта для печати, автор Иван Бегтин, АНО «Информационная культура».
+- Данные карты: [data/maps/health.yaml](https://github.com/infoculture/datainventorydocs/blob/master/data/maps/health.yaml) и общий список источников [data/sources.yaml](https://github.com/infoculture/datainventorydocs/blob/master/data/sources.yaml).
