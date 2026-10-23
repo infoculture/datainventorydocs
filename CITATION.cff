@@ -1,7 +1,7 @@
 # Как цитировать книгу «Карты данных».
 # Формат: Citation File Format 1.2.0, https://citation-file-format.github.io/
-# Адрес сайта совпадает с url + baseUrl в docusaurus.config.ts. Лицензия текста не выбрана —
-# когда автор её выберет, добавьте поле license здесь и в preferred-citation.
+# Адрес сайта совпадает с url + baseUrl в docusaurus.config.ts. Лицензия текста — CC BY 4.0,
+# полный текст — в файле LICENSE.
 cff-version: 1.2.0
 message: >-
   Если вы ссылаетесь на эту книгу, цитируйте её так.
@@ -16,6 +16,7 @@ authors:
   - family-names: "Бегтин"
     given-names: "Иван"
     alias: "Ivan Begtin"
+license: CC-BY-4.0
 url: "https://infoculture.github.io/datainventorydocs/"
 repository-code: "https://github.com/infoculture/datainventorydocs"
 keywords:
@@ -36,5 +37,6 @@ preferred-citation:
   year: 2026
   languages:
     - ru
+  license: CC-BY-4.0
   url: "https://infoculture.github.io/datainventorydocs/"
   repository-code: "https://github.com/infoculture/datainventorydocs"
