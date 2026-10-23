@@ -116,7 +116,9 @@ const config: Config = {
           ],
         },
       ],
-      copyright: 'Иван Бегтин, «Карты данных». Черновик книги.',
+      copyright:
+        '© 2026 Иван Бегтин, «Карты данных», черновик октября 2026 года. Текст доступен по лицензии ' +
+        '<a href="https://creativecommons.org/licenses/by/4.0/deed.ru">CC BY 4.0</a>.',
     },
     mermaid: {
       theme: {light: 'neutral', dark: 'dark'},
