@@ -27,10 +27,12 @@ const config: Config = {
   },
 
   markdown: {
+    mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: 'throw',
     },
   },
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [
@@ -113,6 +115,9 @@ const config: Config = {
         },
       ],
       copyright: 'Иван Бегтин, «Карты данных». Черновик книги.',
+    },
+    mermaid: {
+      theme: {light: 'neutral', dark: 'dark'},
     },
     prism: {
       theme: prismThemes.github,
