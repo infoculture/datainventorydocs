@@ -21,4 +21,8 @@ npm start            # разработка
 npx tsc --noEmit     # проверка типов
 npm run build        # сборка, падает на битых ссылках
 npm run atlas:check  # проверить данные атласа
+npm run check-sources # проверить адреса источников атласа
+npm run pdf          # PDF из готовой сборки: build/data-maps-book.pdf (scripts/pdf/README.md)
 ```
+
+Как цитировать книгу — `CITATION.cff`, постоянные пути и соответствие старым адресам GitBook — `stable-paths.md`.

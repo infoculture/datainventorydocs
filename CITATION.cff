@@ -1,0 +1,40 @@
+# Как цитировать книгу «Карты данных».
+# Формат: Citation File Format 1.2.0, https://citation-file-format.github.io/
+# Адрес сайта совпадает с url + baseUrl в docusaurus.config.ts. Лицензия текста не выбрана —
+# когда автор её выберет, добавьте поле license здесь и в preferred-citation.
+cff-version: 1.2.0
+message: >-
+  Если вы ссылаетесь на эту книгу, цитируйте её так.
+  If you cite this book, please use the reference below.
+title: "Карты данных"
+abstract: >-
+  Как выяснить, где лежат данные, кто ими владеет и насколько они доступны.
+  Книга о картах данных: какие они бывают, как их составлять, где искать сведения
+  о государственных информационных системах и как хранить карту как данные.
+  С атласом отраслевых карт 2018–2019 годов.
+authors:
+  - family-names: "Бегтин"
+    given-names: "Иван"
+    alias: "Ivan Begtin"
+url: "https://infoculture.github.io/datainventorydocs/"
+repository-code: "https://github.com/infoculture/datainventorydocs"
+keywords:
+  - карты данных
+  - инвентаризация данных
+  - государственные информационные системы
+  - открытые данные
+  - источники данных
+  - data maps
+  - data inventory
+preferred-citation:
+  type: book
+  title: "Карты данных: как выяснить, где лежат данные, кто ими владеет и насколько они доступны"
+  authors:
+    - family-names: "Бегтин"
+      given-names: "Иван"
+      alias: "Ivan Begtin"
+  year: 2026
+  languages:
+    - ru
+  url: "https://infoculture.github.io/datainventorydocs/"
+  repository-code: "https://github.com/infoculture/datainventorydocs"
