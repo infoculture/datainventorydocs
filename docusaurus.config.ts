@@ -20,6 +20,7 @@ const config: Config = {
   trailingSlash: true,
 
   onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
 
   i18n: {
     defaultLocale: 'ru',
