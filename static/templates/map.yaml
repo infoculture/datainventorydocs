@@ -1,0 +1,13 @@
+# Заготовка карты данных. Схема полей — data/README.md в репозитории книги.
+id: my-topic
+title: Моя тема
+kind: [questions, availability]
+checked: 2026-10
+author: Имя Фамилия
+license: CC BY 4.0
+info_sources: откуда взяты сведения
+questions:
+  - n: 1
+    text: Где найти …?
+    sources:
+      - {source: some-source-id, availability: available}
