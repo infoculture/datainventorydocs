@@ -97,6 +97,7 @@ const config: Config = {
             {label: 'Виды карт данных', to: '/map-types/classification/'},
             {label: 'Как составить карту', to: '/method/process/'},
             {label: 'Атлас карт данных', to: '/atlas/how-to-read/'},
+            {label: 'Скачать PDF', to: 'pathname:///data-maps-book.pdf'},
           ],
         },
         {
