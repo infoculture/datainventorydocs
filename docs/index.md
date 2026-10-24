@@ -70,7 +70,7 @@ description: Книга о картах данных — как выяснить
 - **[V. Инструменты](./05-tools/01-mindmaps.md)** — интеллект-карты, доски, таблицы, карты как данные.
 - **[VI. Атлас карт данных](./06-atlas/01-how-to-read.md)** — готовые отраслевые карты.
 - **[VII. Практики](./07-practices/01-good-practices.md)** — хорошие практики и типичные ошибки.
-- **[Приложения](./08-appendices/01-glossary.md)** — глоссарий, нормативная база, шаблоны, чек-листы, литература.
+- **[Приложения](./08-appendices/01-glossary.md)** — [глоссарий](./08-appendices/01-glossary.md), [нормативная база](./08-appendices/02-legal-framework.md), [шаблоны](./08-appendices/03-templates.md), [чек-листы](./08-appendices/04-checklists.md), [литература](./08-appendices/05-bibliography.md).
 
 ## Как устроены главы
 

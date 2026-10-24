@@ -50,6 +50,8 @@ import SummaryChecks from './_generated/summary-checks.mdx';
 
 <SummaryRepeated />
 
+На всех четырёх картах есть fedstat.ru, gks.ru, zakupki.gov.ru и clearspending.ru — статистика и госзакупки. Как работать с такими источниками — в главах [«Порталы открытых данных и статистика»](../04-sources/07-open-data-and-statistics.md) и [«Госконтракты по ИТ»](../04-sources/04-it-procurement.md).
+
 С этих источников стоит начинать проверку, когда атлас будут обновлять: от них зависят ответы сразу на многих картах.
 
 ## Адреса источников в октябре 2026 года
