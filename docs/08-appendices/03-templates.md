@@ -51,7 +51,7 @@ questions:
       - {source: some-source-id, availability: available}
 ```
 
-Атлас пока хранит доступность по легенде карт 2018–2019 годов (`available`, `restricted`, `unavailable`). Для новой карты лучше сразу записывать статус по пятиуровневой шкале, как в `links.csv`.
+Атлас пока хранит доступность по легенде карт 2018–2019 годов, и скрипт проверки атласа принимает только `available`, `restricted` и `unavailable`: значения пятиуровневой шкалы в `map.yaml` проверку не пройдут. Для новой карты статус по шкале удобнее вести в таблице `links.csv`, а в файл карты переносить, когда схема атласа получит поле `status` ([`data/README.md`](https://github.com/infoculture/datainventorydocs/blob/master/data/README.md)).
 
 ## Шаблоны интеллект-карт
 

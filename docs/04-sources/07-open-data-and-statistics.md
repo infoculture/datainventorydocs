@@ -43,10 +43,10 @@ data.gov.ru — пример того, почему у источника на �
 - **Порталы закрываются и переезжают** — data.gov.ru не было два года.
 - **Многие российские сайты не открываются из-за рубежа**, в том числе статистические.
 
-О том, как устроены каталоги данных и чем различаются их типы, — книга [«Каталоги данных»](https://github.com/ivbeg/data-catalogs-book).
+О том, как устроены каталоги данных и чем различаются их типы, — книга [«Каталоги данных»](https://datacatalogs.begtin.tech/).
 
 ## Источники
 
-- Бегтин И. Каталоги данных — глава [«Жизненный цикл каталога»](https://github.com/ivbeg/data-catalogs-book/blob/main/docs/09-practices/03-lifecycle.md) о закрытии и открытии data.gov.ru.
+- Бегтин И. Каталоги данных — глава [«Жизненный цикл каталога»](https://datacatalogs.begtin.tech/practices/lifecycle/) о закрытии и открытии data.gov.ru.
 - И. Бегтин, [Обновлённый портал data.gov.ru](https://begtin.substack.com/p/datagovru), 16 июля 2025 года.
 - Источники с карт атласа — [data/sources.yaml](https://github.com/infoculture/datainventorydocs/blob/master/data/sources.yaml).
