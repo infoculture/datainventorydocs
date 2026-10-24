@@ -32,7 +32,7 @@ description: "Реестры государственных информацио
 
 Реестры государственных информационных систем существуют на федеральном уровне и на уровне ряда субъектов федерации.
 
-На федеральном уровне — это раздел реестр ФГИС на [сайте ФГИС КИ](http://portal.eskigov.ru/fgis/).
+На федеральном уровне — это раздел «Реестр ФГИС» на [сайте ФГИС КИ](http://portal.eskigov.ru/fgis/).
 
 В октябре 2026 года по адресу gis.gov.ru открывается вход в ФГИС КИ, а portal.eskigov.ru из сети, где проверялась книга, отвечает ошибкой 403. Похоже, система переехала на новый адрес; где теперь опубликованы реестр ФГИС и его открытые данные, нужно проверить из российской сети.
 
@@ -41,7 +41,7 @@ description: "Реестры государственных информацио
 * Санкт-Петербург [https://reestr-gis.spb.ru/rgis/](https://reestr-gis.spb.ru/rgis/) — в октябре 2026 года по этому адресу страница не найдена (404)
 * Камчатский край [https://agais.kamgov.ru/reestr_gis](https://agais.kamgov.ru/reestr_gis) — в октябре 2026 года домена agais.kamgov.ru нет
 * Воронежская область [https://www.govvrn.ru/edinyj-reestr-gosudarstvennyh-informacionnyh-sistem-voronezskoj-oblastio](https://www.govvrn.ru/edinyj-reestr-gosudarstvennyh-informacionnyh-sistem-voronezskoj-oblastio)
-* Удмуртская республика [http://www.msur.ru/function/information_systems/register_state_information_systems_udm/](http://www.msur.ru/function/information_systems/register_state_information_systems_udm/)
+* Удмуртская Республика [http://www.msur.ru/function/information_systems/register_state_information_systems_udm/](http://www.msur.ru/function/information_systems/register_state_information_systems_udm/)
 
 Сайты Воронежской области и Удмуртии из сети проверки не ответили; их нужно проверить из российской сети.
 
@@ -52,13 +52,13 @@ description: "Реестры государственных информацио
 * о финансировании
 * о полномочиях
 * о форматах данных
-* о информационных ресурсах
+* об информационных ресурсах
 
-и не содержат таких данных как:
+и не содержат таких данных, как:
 
 * ссылки на общедоступные ресурсы
 * ссылки на госконтракты
-* документы ТЗ, акты и тд
+* технические задания, акты и т. п.
 
 ## Источники
 

@@ -55,7 +55,7 @@ questions:
       - {source: cbr-ru, availability: available}
 ```
 
-Полное описание полей — в [`data/README.md`](https://github.com/infoculture/datainventorydocs/blob/master/data/README.md).
+Полное описание полей — в [`data/README.md`](https://github.com/infoculture/datainventorydocs/blob/master/data/README.md), заготовка файла карты — в приложении [«Шаблоны»](../08-appendices/03-templates.md#файл-карты).
 
 YAML выбран потому, что его удобно читать и править человеку, а программы читают его так же легко, как JSON. Для карты, которую ведут не программисты, подойдёт и обычная таблица: лист источников, лист вопросов и лист связей. Главное — чтобы источник был одной строкой, а не повторялся в каждой ячейке.
 
